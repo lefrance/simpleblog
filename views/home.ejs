@@ -1,0 +1,19 @@
+
+<%# including the header.ejs that is in the partial folder %>
+<%- include partials/header.ejs %>
+
+
+<h1>Home</h1>
+<p> <%= homeStartingContent %> <p>
+
+<div class="box">
+<% posts.forEach(function(element) { %>
+  <h1><%= element.title %></h1>
+  <p><%= element.postdata%></p>
+<%})%>
+</div>
+
+
+
+<%# inlcuding the footer.ejs that is in the partial folder %>
+<%- include partials/footer.ejs %>

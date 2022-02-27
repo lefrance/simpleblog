@@ -1,0 +1,23 @@
+<%# including the header.ejs that is in the partial folder %>
+<%- include partials/header.ejs %>
+
+
+<h1>Compose</h1>
+
+
+<!-- create a form
+send the information recordered in the form to the home route
+use post method to send the form information -->
+<form action="/compose" method="post">
+
+  <!-- the input  is stored in the name atrribute -->
+  <!-- it can be accessed in the req.body.compose in app.js file  -->
+  <label for="exampleFormControlInput1">Email address</label>
+  <input type="text" class="form-control" name="title" placeholder="title" autocomplete="off">
+  <label for="exampleFormControlInput1">Email address</label>
+<textarea class="form-control" name="postdata" id="exampleFormControlTextarea1" rows="3"></textarea>
+<br>
+<button type="submit" class="btn btn-primary">submit</button>
+</form>
+<%# inlcuding the footer.ejs that is in the partial folder %>
+<%- include partials/footer.ejs %>
