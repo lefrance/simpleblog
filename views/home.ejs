@@ -4,12 +4,28 @@
 
 
 <h1>Home</h1>
+
+
+
+<!-- receive homeStartingContent from app.js  -->
 <p> <%= homeStartingContent %> <p>
 
 <div class="box">
+
+<%# loop trough all elements of the posts list  %>
 <% posts.forEach(function(element) { %>
+   <%# display the title in h1  %>
   <h1><%= element.title %></h1>
-  <p><%= element.postdata%></p>
+  <p>
+      <%# display the postdata in "p"
+      tranduct the paragraf to 100 caracters
+      add "..." at the end of 100 caracters %>
+     <%= element.postdata.slice(0, 100).concat('...')%>
+
+     <%# add link that will take the user to the post url %>
+     <a href=<%="/post/".concat(element.title )%>>read more</a>
+  </p>
+
 <%})%>
 </div>
 
